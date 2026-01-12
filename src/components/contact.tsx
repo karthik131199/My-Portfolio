@@ -1,6 +1,7 @@
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, message } from "antd";
 import { EnvironmentOutlined, InboxOutlined, PhoneOutlined } from '@ant-design/icons';
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 // LocationMap Component
 const LocationMap = () => {
@@ -29,7 +30,22 @@ const LocationMap = () => {
 // Contact Component
 const Contact = () => {
   const [form] = Form.useForm();
-
+    const sendEmail = (values: any) => {
+    emailjs.send(
+      "service_eb8gtha", 
+      "template_5q936uj",
+      values,
+      "ZsAfZ3xX7Bd3elk9I"
+    ).then(
+      () => {
+        message.success("Message sent successfully!");
+        form.resetFields();
+      },
+      () => {
+        message.error("Failed to send message");
+      }
+    );
+  };
   return (
     <div className="contact-section">
       <h2 className="heading">
@@ -42,11 +58,6 @@ const Contact = () => {
       <div className="contact-container">
         {/* Form Section */}
         <div className="contact-form">
-          <form name="contact" method="POST" data-netlify="true">
-            {/* Netlify hidden inputs */}
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
-
             {/* “Let's Connect !!!” Title */}
             <p className="contact-title">
               <span className="summary-greetings">
@@ -59,7 +70,7 @@ const Contact = () => {
             </p>
 
             {/* Ant Design Form */}
-            <Form form={form} layout="vertical">
+            <Form form={form} layout="vertical" onFinish={sendEmail}>
               <Form.Item
                 name="name"
                 label="Name"
@@ -93,7 +104,6 @@ const Contact = () => {
                 </Button>
               </Form.Item>
             </Form>
-          </form>
         </div>
 
         {/* Contact Info Section */}
