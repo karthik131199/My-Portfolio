@@ -55,22 +55,39 @@ const LocationMap = () => {
 // };
 
 const contact = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
+    const [form] = Form.useForm();
+    // const [formData, setFormData] = useState({
+    //     name: "",
+    //     email: "",
+    //     message: ""
+    // });
 
-    const handleChange = (e: any) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    // const handleChange = (e: any) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value });
+    // };
     return (
         <div className="contact-section">
             <h2 className="heading">Contact <span className="blue-text">Me</span></h2>
             <h3 className="sub-heading">In order to discuss about more about project and technical side. Please contact me by mobile and social networks</h3>
             <div className="contact-container">
                 <div className="contact-form">
-                    <Form name="contact" method="POST" data-netlify="true" netlify-honeybot='bot-field'>
+                    <form
+                        name="contact"
+                        method="POST"
+                        data-netlify="true"
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            // Let Netlify handle submission via a hidden iframe
+                            const formData = new FormData(e.currentTarget);
+                            fetch("/", {
+                                method: "POST",
+                                body: formData,
+                            }).then(() => alert("Form submitted!"));
+                        }}
+                    >
+                        {/* Netlify honeypot for spam protection */}
+                        <input type="hidden" name="form-name" value="contact" />
+                        <input type="hidden" name="bot-field" />
                         <p className="contact-title">
                             <span className="summary-greetings">
                                 Let's Connect !!!
@@ -80,30 +97,43 @@ const contact = () => {
                                 <i className="corner br"></i>
                             </span>
                         </p>
-                        <input type="hidden" name="form-name" value="contact" />
-                        {/* Honeypot (spam protection)  */}
-                        <input type="hidden" name="bot-field" />
-                        <Form.Item>
-                            <Input placeholder="First Name" name="firstname" onChange={handleChange} required />
-                        </Form.Item>
-                        <Form.Item>
-                            <Input placeholder="Email" name="email" onChange={handleChange} required />
-                        </Form.Item>
-                        <Form.Item>
-                            <TextArea placeholder="Text your message here" rows={5} name="message" onChange={handleChange} required />
-                        </Form.Item>
-                        {/* <Form.Item>
-                            <Dragger {...props} name="file">
-                                <p className="ant-upload-drag-icon">
-                                    <InboxOutlined />
-                                </p>
-                                <p className="ant-upload-text">Click or drag file to this area to upload</p>
-                            </Dragger>
-                        </Form.Item> */}
-                        <Form.Item>
-                            <Button className='submit-btn' htmlType='submit' type="primary" shape="round"><b>SEND MESSAGE</b></Button>
-                        </Form.Item>
-                    </Form>
+                        <Form form={form} layout="vertical">
+                            <Form.Item
+                                name="name"
+                                label="Name"
+                                rules={[{ required: true, message: "Please enter your name" }]}
+                            >
+                                <Input name="name" />
+                            </Form.Item>
+
+                            <Form.Item
+                                name="email"
+                                label="Email"
+                                rules={[
+                                    { required: true, message: "Please enter your email" },
+                                    { type: "email", message: "Enter a valid email" },
+                                ]}
+                            >
+                                <Input name="email" />
+                            </Form.Item>
+
+                            <Form.Item
+                                name="message"
+                                label="Message"
+                                rules={[{ required: true, message: "Please enter your message" }]}
+                            >
+                                <Input.TextArea name="message" />
+                            </Form.Item>
+
+                            <Form.Item>
+                                <Button type="primary" htmlType="submit">
+                                    SEND MESSAGE
+                                </Button>
+                            </Form.Item>
+                        </Form>
+                    </form>
+
+
                 </div>
                 <div className="contact-information">
                     <div className="map-container">

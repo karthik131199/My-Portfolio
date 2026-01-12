@@ -653,5 +653,6 @@
   padding: 20px;
 }
 .contact-title span{
+  color: var(--color-black);
   font-weight: 600 !important;
 }
