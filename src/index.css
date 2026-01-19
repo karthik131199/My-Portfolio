@@ -10,7 +10,6 @@
 
 }
 
-
 body {
   margin: 0 100px;
   height: 100%;
@@ -61,6 +60,7 @@ button:focus-visible {
 
 /* Tablets */
 @media (max-width: 900px) {
+
   .summary-container {
     flex-direction: column;
     text-align: center;
@@ -68,7 +68,7 @@ button:focus-visible {
 
   .footer-section {
     /* margin-bottom: 20px; */
-    padding: 5px;
+    padding: 5px !important;
   }
 
   .footer-items {
@@ -93,6 +93,9 @@ button:focus-visible {
 /* Mobiles */
 @media (max-width: 768px) {
 
+  body{
+    margin: 0 20px !important;
+  }
   .menu-item {
     display: none;
   }
