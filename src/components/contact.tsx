@@ -70,7 +70,7 @@ const Contact = () => {
             </p>
 
             {/* Ant Design Form */}
-            <Form form={form} layout="vertical" onFinish={sendEmail}>
+            <Form form={form} layout="vertical" onFinish={sendEmail} className="contact-inner-form">
               <Form.Item
                 name="name"
                 label="Name"

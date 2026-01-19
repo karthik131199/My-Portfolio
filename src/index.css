@@ -93,9 +93,10 @@ button:focus-visible {
 /* Mobiles */
 @media (max-width: 768px) {
 
-  body{
+  body {
     margin: 0 20px !important;
   }
+
   .menu-item {
     display: none;
   }
@@ -174,11 +175,29 @@ button:focus-visible {
     grid-template-columns: auto !important;
   }
 
-  .sub-heading{
+  .sub-heading {
     font-size: 16px;
   }
-  .summary-greetings{
+
+  .summary-greetings {
     font-size: 16px !important;
     padding: 5px 10px !important;
+  }
+
+  .skills-content {
+    padding: 5px 5px !important;
+  }
+
+  .skills-content li {
+    padding: 10px !important;
+  }
+
+  .ant-tabs-content-holder {
+    padding: 5px 7px !important;
+  }
+
+  .contact-inner-form {
+    margin: 5px !important;
+    padding: 5px !important;
   }
 }
