@@ -187,7 +187,7 @@
   width: 350px;
   height: 450px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   position: relative;
   z-index: 2; /* image above design */

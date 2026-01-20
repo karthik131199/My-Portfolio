@@ -1,5 +1,5 @@
 import { BsStars } from 'react-icons/bs';
-import profile from '../assets/profile.jpg';
+import profile from '../assets/PassportSizePhoto.jpg';
 import Footer from '../components/footer';
 import { Typewriter } from 'react-simple-typewriter';
 const summary = () => {
