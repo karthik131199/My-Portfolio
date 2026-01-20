@@ -16,8 +16,8 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.1em;
+  line-height: 1.3;
 }
 
 button {
@@ -199,5 +199,13 @@ button:focus-visible {
   .contact-inner-form {
     margin: 5px !important;
     padding: 5px !important;
+  }
+  .modal-body .exp-content h2{
+    font-size: 16px !important;
+  }
+  .modal-body .exp-content h4,
+  .modal-body .exp-content p,
+  .modal-body .exp-content li{
+    font-size: 14px !important;
   }
 }

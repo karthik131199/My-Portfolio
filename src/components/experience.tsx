@@ -11,26 +11,6 @@ const experience = () => {
             </h2>
 
             <div className="exp-container">
-
-                {/* EDUCATION */}
-                <div className="exp-box">
-                    <div className="inner-heading">
-                        <span className="exp-icon"><BsFillMortarboardFill /></span><p>Education</p>
-                    </div>
-
-                    <div className="exp-content">
-                        <p className="period">2019 - 2021</p>
-                        <h4 className="title">Master in Computer Applications (MCA)</h4>
-                        <h3 className="company-name">SASTRA Deemed University - Thanjavur</h3>
-                    </div>
-
-                    <div className="exp-content">
-                        <p className="period">2016 - 2019</p>
-                        <h4 className="title">Bachelor in Computer Applications (BCA)</h4>
-                        <p className="company-name">SASTRA Deemed University - Kumbakonam</p>
-                    </div>
-                </div>
-
                 {/* WORK EXPERIENCE */}
                 <div className="exp-box">
                     <div className="inner-heading">
@@ -60,7 +40,7 @@ const experience = () => {
                     <div className="exp-content">
                         <p className="period">June 2024 – July 2025</p>
                         <h4 className="title">Senior Developer</h4>
-                        <h3 className="company-name">KalavAI Digital Private Limited – The Viswa Group</h3>
+                        <h3 className="company-name">The Viswa Group</h3>
 
                         {/* <p className="role-desc">
                             Played a key role in designing and delivering secure, scalable backend solutions using modern .NET technologies while collaborating closely with cross-functional teams.
@@ -92,6 +72,26 @@ const experience = () => {
                         </ul> */}
                     </div>
                 </div>
+                {/* EDUCATION */}
+                <div className="exp-box">
+                    <div className="inner-heading">
+                        <span className="exp-icon"><BsFillMortarboardFill /></span><p>Education</p>
+                    </div>
+
+                    <div className="exp-content">
+                        <p className="period">2019 - 2021</p>
+                        <h4 className="title">Master in Computer Applications (MCA)</h4>
+                        <h3 className="company-name">SASTRA Deemed University - Thanjavur</h3>
+                    </div>
+
+                    <div className="exp-content">
+                        <p className="period">2016 - 2019</p>
+                        <h4 className="title">Bachelor in Computer Applications (BCA)</h4>
+                        <p className="company-name">SASTRA Deemed University - Kumbakonam</p>
+                    </div>
+                </div>
+
+                
             </div>
             <div className="exp-btn">
                 <button className="btn-see-more" onClick={() => setOpenModal(true)}>See More<span className="arrow-icon"><BsArrowRightCircleFill /></span></button>
@@ -124,7 +124,7 @@ const experience = () => {
 
                                 {/* KALAVAI */}
                                 <div className="exp-content">
-                                    <h2 className="company-name">KalavAI Digital Private Limited – The Viswa Group</h2>
+                                    <h2 className="company-name">The Viswa Group</h2>
                                     <h4 className="title">Senior Developer</h4>
                                     <p className="period">June 2024 – July 2025</p>
                                     <p className="role-desc">
